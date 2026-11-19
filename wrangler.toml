@@ -4,7 +4,7 @@ compatibility_date = "2024-12-01"
 
 # Worker 管理页 / API 自定义域名；不要把优选 IP 池域名绑定到 Worker
 routes = [
-  { pattern = "bestip.liuhai.indevs.in", custom_domain = true },
+  { pattern = "bestip.xiaoji.ggff.net", custom_domain = true },
 ]
 
 # KV namespace
@@ -18,12 +18,12 @@ crons = ["15 */6 * * *"]
 
 # 非敏感变量(public,可见即可)
 [vars]
-CF_ZONE_ID        = "8de9917717254508294b57621d0f6a51"
-SERVICE_HOSTNAME  = "bestip.liuhai.indevs.in" # Worker 管理页 / API 入口，不参与优选 IP DNS 同步
-ROOT_DOMAIN       = "liuhai.indevs.in"        # 显式限制 DNS 同步根域，避免误写到其它 zone
-ALLOWED_HOSTS     = "bestip.liuhai.indevs.in" # 页面/API 入口 host 白名单；/health 仍允许监控访问
-AUTO_RECORD_NAME  = "auto.liuhai.indevs.in"   # 默认推荐优选池
-CF_RECORD_NAME    = "cf.liuhai.indevs.in"     # 通用优选池
+CF_ZONE_ID        = "cbc668b2abcce7b42a37afbc53e24feb"
+SERVICE_HOSTNAME  = "bestip.xiaoji.ggff.net" # Worker 管理页 / API 入口，不参与优选 IP DNS 同步
+ROOT_DOMAIN       = "xiaoji.ggff.net"        # 显式限制 DNS 同步根域，避免误写到其它 zone
+ALLOWED_HOSTS     = "bestip.xiaoji.ggff.net" # 页面/API 入口 host 白名单；/health 仍允许监控访问
+AUTO_RECORD_NAME  = "auto.xiaoji.ggff.net"   # 默认推荐优选池
+CF_RECORD_NAME    = "cf.xiaoji.ggff.net"     # 通用优选池
 CF_DNS_BY_CARRIER = "1"   # "1" = 按运营商分子域同步 (ct./cu./cm.)
 CF_DNS_IPV6       = "0"   # "1" = 同步 AAAA 记录；默认关闭，避免客户端兼容性突变
 DNS_TOP_N         = "10"
