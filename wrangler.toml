@@ -4,13 +4,13 @@ compatibility_date = "2024-12-01"
 
 # Worker 管理页 / API 自定义域名；不要把优选 IP 池域名绑定到 Worker
 routes = [
-  { pattern = "bestip.leilaomi.cc.cd", custom_domain = true },
+  { pattern = "bestip.liuhai.indevs.in", custom_domain = true },
 ]
 
 # KV namespace
 [[kv_namespaces]]
 binding = "KV"
-id = "23c38685383d4d3f8a1391487482e0a9"
+id = "b5f7910ae16f4796b751d177bed6c749"
 
 # Cron Trigger - 每 6 小时拉一次源 + 同步 DNS（偏移 15 分钟避开 hostmonit 整点更新）
 [triggers]
@@ -18,12 +18,12 @@ crons = ["15 */6 * * *"]
 
 # 非敏感变量(public,可见即可)
 [vars]
-CF_ZONE_ID        = "9aaafd1409adada280a4a6138cad50e4"
-SERVICE_HOSTNAME  = "bestip.leilaomi.cc.cd" # Worker 管理页 / API 入口，不参与优选 IP DNS 同步
-ROOT_DOMAIN       = "leilaomi.cc.cd"        # 显式限制 DNS 同步根域，避免误写到其它 zone
-ALLOWED_HOSTS     = "bestip.leilaomi.cc.cd" # 页面/API 入口 host 白名单；/health 仍允许监控访问
-AUTO_RECORD_NAME  = "auto.leilaomi.cc.cd"   # 默认推荐优选池
-CF_RECORD_NAME    = "cf.leilaomi.cc.cd"     # 通用优选池
+CF_ZONE_ID        = "8de9917717254508294b57621d0f6a51"
+SERVICE_HOSTNAME  = "bestip.liuhai.indevs.in" # Worker 管理页 / API 入口，不参与优选 IP DNS 同步
+ROOT_DOMAIN       = "liuhai.indevs.in"        # 显式限制 DNS 同步根域，避免误写到其它 zone
+ALLOWED_HOSTS     = "bestip.liuhai.indevs.in" # 页面/API 入口 host 白名单；/health 仍允许监控访问
+AUTO_RECORD_NAME  = "auto.liuhai.indevs.in"   # 默认推荐优选池
+CF_RECORD_NAME    = "cf.liuhai.indevs.in"     # 通用优选池
 CF_DNS_BY_CARRIER = "1"   # "1" = 按运营商分子域同步 (ct./cu./cm.)
 CF_DNS_IPV6       = "0"   # "1" = 同步 AAAA 记录；默认关闭，避免客户端兼容性突变
 DNS_TOP_N         = "10"
